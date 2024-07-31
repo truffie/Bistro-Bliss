@@ -1,95 +1,112 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import { Card, BaseCardProps, MenuCardProps } from '@/components/Card/Card';
+import styles from './page.module.scss';
+
+import { Footer } from '@/components/Footer/Footer';
+import { Header } from '@/components/Header/Header';
 
 export default function Home() {
+  const menuCards: MenuCardProps[] = [
+    {
+      img: styles.breakfast,
+      title: 'Breakfast',
+      text: 'In the new era of technology we look in the future with certainty and pride for our life.',
+      textLink: 'Explore Menu',
+    },
+    {
+      img: styles.dishes,
+      title: 'Main Dishes',
+      text: 'In the new era of technology we look in the future with certainty and pride for our life.',
+      textLink: 'Explore Menu',
+    },
+    {
+      img: styles.drinks,
+      title: 'Drinks',
+      text: 'In the new era of technology we look in the future with certainty and pride for our life.',
+      textLink: 'Explore Menu',
+    },
+    {
+      img: styles.desserts,
+      title: 'Desserts',
+      text: 'In the new era of technology we look in the future with certainty and pride for our life.',
+      textLink: 'Explore Menu',
+    },
+  ];
+
+  const eventCards: BaseCardProps[] = [
+    {
+      img: styles.catering,
+      title: 'Caterings',
+      text: 'In the new era of technology we look in the future with certainty and pride for our life.',
+    },
+    {
+      img: styles.birthdays,
+      title: 'Birthdays',
+      text: 'In the new era of technology we look in the future with certainty and pride for our life.',
+    },
+    {
+      img: styles.weddings,
+      title: 'Weddings',
+      text: 'In the new era of technology we look in the future with certainty and pride for our life.',
+    },
+    {
+      img: styles.evetns,
+      title: 'Events',
+      text: 'In the new era of technology we look in the future with certainty and pride for our life.',
+    },
+  ];
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    <>
+      <Header />
+      <main>
+        <section className={styles.promo}>
+          <div className={styles.promoWrapper}>
+            <h1>Best food for your taste</h1>
+            <p>
+              Discover delectable cuisine and unforgettable moments in our
+              welcoming, culinary haven.
+            </p>
+            <div className={styles.buttonWrapper}>
+              <button className={styles.buttonSecondary}>Book A Table</button>
+              <button className={styles.button}>Explore Menu</button>
+            </div>
+          </div>
+        </section>
+        <section className={styles.menu}>
+          <div className={styles.wrapper}>
+            <h2 className={styles.header}>Browse Our Menu</h2>
+            <div className={styles.layoutGrid}>
+              {menuCards.map((card, i) => (
+                <Card
+                  key={i}
+                  img={card.img}
+                  title={card.title}
+                  text={card.text}
+                  textLink={card.textLink}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+        <section className={styles.services}>
+          <div className={styles.wrapper}>
+            <h2 className={styles.header}>
+              We also offer unique services for your events
+            </h2>
+            <div className={styles.layoutGrid}>
+              {eventCards.map((card, i) => (
+                <Card
+                  key={i}
+                  img={card.img}
+                  title={card.title}
+                  text={card.text}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
   );
 }
