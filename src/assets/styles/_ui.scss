@@ -1,4 +1,5 @@
 @import './variables';
+@import './mixins';
 
 .ui-button {
   @include font(1rem, 700);
@@ -30,4 +31,11 @@
   &:hover {
     background-color: $accent-color;
   }
+}
+
+// sections items
+// header
+.ui-section-header {
+  @include font(55px, 500, 60px);
+  color: $text-color;
 }

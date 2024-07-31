@@ -1,4 +1,11 @@
+// content conitaer
 .layout-container {
   max-width: 1300px;
   margin: 0 auto;
+}
+
+// cards 
+.layout-grid {
+  @include flex(center, center, row, 1.5rem);
+  width: 100%;
 }

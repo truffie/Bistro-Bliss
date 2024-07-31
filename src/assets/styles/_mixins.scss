@@ -22,8 +22,9 @@
   line-height: $height;
 }
 
-@mixin img($src, $width, $height) {
-  background: url($src) center no-repeat;
+@mixin img($width, $height) {
+  background-position: center;
+  background-repeat: no-repeat;
   width: $width;
   height: $height;
   background-size: contain;
