@@ -1,0 +1,46 @@
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/layout';
+@import '../../../assets/styles/ui';
+
+.cardWrapper {
+  @extend .layout-grid;
+  .card {
+    padding: 0;
+    border: none;
+    border-radius: 12px;
+  }
+}
+
+.header {
+  @extend .ui-section-header;
+}
+
+.services {
+  background-color: $background-color;
+  padding: 120px 0;
+  .wrapper {
+    @extend .layout-container;
+    @include flex(center, flex-start, column, 4rem);
+  }
+  .header {
+    max-width: 675px;
+  }
+}
+.img {
+  @include img(306px, 320px);
+  border-radius: 12px;
+}
+.catering {
+  background-image: url('./assets/catering.png');
+}
+.birthday {
+  background-image: url('./assets/birthday.png');
+}
+.wedding {
+  background-image: url('./assets/wedding.png');
+
+}
+.event {
+  background-image: url('./assets/event.png');
+}

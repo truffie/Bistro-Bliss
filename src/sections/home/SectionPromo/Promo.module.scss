@@ -1,0 +1,37 @@
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/ui';
+
+// button
+.button {
+  @extend .ui-button;
+  &Secondary {
+    @extend .ui-button-secondary;
+  }
+}
+
+.promo {
+  @include center;
+  overflow: hidden;
+  background-image: url('./assets/bg.jpg');
+  background-size: cover;
+  max-width: 1600px;
+  height: 800px;
+
+  .promoWrapper {
+    @include flex(center, center, column, 1.5rem);
+    max-width: 660px;
+    text-align: center;
+    color: $text-color;
+    h1 {
+      @include font(100px, 400, 96px);
+    }
+    p {
+      @include font(20px, 400, 32px);
+      max-width: 540px;
+    }
+    .buttonWrapper {
+      @include flex(center, center, row, 1rem);
+    }
+  }
+}

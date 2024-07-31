@@ -1,0 +1,38 @@
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/layout';
+@import '../../../assets/styles/ui';
+
+.cardWrapper {
+  @extend .layout-grid;
+}
+
+.header {
+  @extend .ui-section-header;
+}
+
+.menu {
+  background-color: $background-secondary-color;
+  padding: 90px 0 102px;
+  .wrapper {
+    @extend .layout-container;
+    @include flex(center, center, column, 4rem);
+  }
+}
+
+.img {
+  @include img(100px, 100px);
+}
+
+.breakfast {
+  background-image: url('./assets/breakfast.svg');
+}
+.dishes {
+  background-image: url('./assets/dishes.svg');
+}
+.drinks {
+  background-image: url('./assets/drinks.svg');
+}
+.desserts {
+  background-image: url('./assets/desserts.svg');
+}
