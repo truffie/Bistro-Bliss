@@ -28,7 +28,9 @@
   src: url('../assets/fonts/DMSans-Regular.ttf') format('truetype');
   font-weight: 400;
 }
-
+::-webkit-scrollbar {
+  width: 0;
+}
 * {
   padding: 0;
   margin: 0;
