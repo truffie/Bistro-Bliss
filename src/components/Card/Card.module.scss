@@ -1,0 +1,23 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+.card {
+  @include flex(center, center, column, 1rem);
+  border-radius: 12px;
+  border: 1.5px solid $accent-color;
+  padding: 34px;
+  text-align: center;
+  h3 {
+    @include font(24px, 700, 30px);
+    font-family: 'DMSans';
+    color: $text-color;
+  }
+  p {
+    @include font(16px, 400);
+    color: $text-xs-color;
+  }
+  a {
+    @include font(16px, 700);
+    color: $secondary-color;
+  }
+}
