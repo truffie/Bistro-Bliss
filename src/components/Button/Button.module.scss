@@ -1,0 +1,11 @@
+@import '../../assets/styles/ui';
+@import '../../assets/styles/mixins';
+
+
+
+.button {
+  @extend .ui-button;
+  &Secondary {
+    @extend .ui-button-secondary;
+  }
+}
