@@ -1,0 +1,30 @@
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin flex($justify, $align, $direciton: row, $gap: 0) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direciton;
+
+  @if $gap != 0 {
+    gap: $gap;
+  }
+}
+
+@mixin font($size, $weight: 400, $height: 24px) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $height;
+}
+
+@mixin img($src, $width, $height) {
+  background: url($src) center no-repeat;
+  width: $width;
+  height: $height;
+  background-size: contain;
+}
