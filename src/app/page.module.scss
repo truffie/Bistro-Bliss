@@ -1,0 +1,70 @@
+@import '../assets/styles/mixins';
+@import '../assets/styles/layout';
+@import '../assets/styles/ui';
+@import '../assets/styles/variables';
+
+.wrapper {
+  @extend .layout-container;
+}
+
+.layoutGrid {
+  @include flex(center, center, row, 1.5rem);
+  width: 100%;
+}
+
+.header {
+  @include font(55px, 500, 60px);
+  color: $text-color;
+}
+
+.button {
+  @extend .ui-button;
+  &Secondary {
+    @extend .ui-button-secondary;
+  }
+}
+
+// section promo
+.promo {
+  background: url('../assets/bg.jpg') center no-repeat;
+  background-size: cover;
+  max-width: 1600px;
+  height: 800px;
+  @include center;
+
+  .promoWrapper {
+    @include flex(center, center, column, 1.5rem);
+    max-width: 660px;
+    text-align: center;
+    color: $text-color;
+    h1 {
+      @include font(100px, 400, 96px);
+    }
+    p {
+      @include font(20px, 400, 32px);
+      max-width: 540px;
+    }
+    .buttonWrapper {
+      @include flex(center, center, row, 1rem);
+    }
+  }
+}
+// section menu
+.menu {
+  background-color: $background-secondary-color;
+  padding: 90px 0 102px;
+  .wrapper {
+    @include flex(center, center, column, 4rem);
+  }
+}
+// section services
+.services {
+  background-color: $background-color;
+  padding: 120px 0;
+  .wrapper {
+    @include flex(center, flex-start, column, 4rem);
+  }
+  .header {
+    max-width: 675px;
+  }
+}
