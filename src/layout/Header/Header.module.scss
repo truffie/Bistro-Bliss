@@ -1,0 +1,64 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/layout';
+@import '../../assets/styles/ui';
+@import '../../assets/styles/variables';
+
+// TODO перенести шрифт
+.header {
+  .contact {
+    background-color: #474747;
+    padding: 0.8rem;
+
+    .wrapper {
+      @extend .layout-container;
+      @include flex(space-between, center);
+      color: white;
+
+      .communication {
+        @include flex(flex-start, center, row, 1.5rem);
+      }
+
+      .socialMedia {
+        @include flex(flex-start, center, row, 0.25rem);
+      }
+    }
+  }
+
+  .content {
+    padding: 2rem;
+    background: $background-color;
+    .wrapper {
+      @extend .layout-container;
+      @include flex(space-between, center);
+
+      //centered navigation
+      position: relative;
+
+      .logo {
+        @include flex(flex-start, center, row, 12px);
+        @include font(42px, 600, 30px);
+        color: $primary-color;
+        font-style: italic;
+        & p {
+          font-family: 'PlayFair';
+        }
+        & div {
+          @include img(55px, 55px);
+          background-image: url('../../assets/logo.svg')
+        }
+      }
+
+      .nav {
+        @include flex(flex-start, center, row, 8px);
+        color: $text-color;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        &Item {
+          @extend .ui-nav;
+        }
+      }
+      
+    }
+  }
+}
