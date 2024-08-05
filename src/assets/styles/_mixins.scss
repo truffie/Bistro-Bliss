@@ -3,29 +3,38 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  text-align: center;
 }
 
-@mixin flex($justify, $align, $direciton: row, $gap: 0) {
+@mixin flex($justify, $align, $direciton: row, $gap: 0, $wrap: wrap) {
   display: flex;
   justify-content: $justify;
   align-items: $align;
   flex-direction: $direciton;
-
-  @if $gap != 0 {
-    gap: $gap;
-  }
+  flex-wrap: $wrap;
+  gap: $gap;
 }
 
-@mixin font($size, $weight: 400, $height: 24px) {
+@mixin font($size: 16px, $weight: 400, $height: 24px) {
   font-size: $size;
   font-weight: $weight;
   line-height: $height;
 }
 
-@mixin img($width, $height) {
+@mixin img($width, $height, $size: contain) {
   background-position: center;
   background-repeat: no-repeat;
   width: $width;
   height: $height;
-  background-size: contain;
+  background-size: $size;
+}
+
+@mixin border {
+  border: $border-width solid $accent-color;
+}
+
+@mixin transition {
+  transition: scale 0.3s ease-in, box-shadow 0.3s ease-in, color 0.3s ease-in,
+    background-color 0.3s ease-in, border-color 0.3s ease-in-out,
+    filter 0.5s ease-in, opacity 0.3s ease-in-out;
 }
