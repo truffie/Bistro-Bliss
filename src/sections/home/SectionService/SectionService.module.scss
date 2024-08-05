@@ -6,9 +6,14 @@
 .cardWrapper {
   @extend .layout-grid;
   .card {
+    max-width: 306px;
     padding: 0;
     border: none;
     border-radius: 12px;
+    text-align: left;
+    p {
+      max-width: 280px;
+    }
   }
 }
 
@@ -28,7 +33,7 @@
   }
 }
 .img {
-  @include img(306px, 320px);
+  @include img(100%, 320px, cover);
   border-radius: 12px;
 }
 .catering {
@@ -39,8 +44,15 @@
 }
 .wedding {
   background-image: url('./assets/wedding.png');
-
 }
 .event {
   background-image: url('./assets/event.png');
+}
+
+@media screen and (max-width: 1300px) {
+  .services {
+    .wrapper {
+      align-items: center;
+    }
+  }
 }

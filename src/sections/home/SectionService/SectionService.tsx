@@ -3,45 +3,51 @@ import styles from './SectionService.module.scss';
 import { FC } from 'react';
 
 import { BaseCardProps, Card } from '@components/Card/Card';
+import AnimatedAppear from '@animation/Appereance';
 
 export const SectionService: FC = () => {
   const eventCards: BaseCardProps[] = [
     {
-      img: styles.catering,
+      img: 'catering',
       title: 'Caterings',
-      text: 'In the new era of technology we look in the future with certainty and pride for our life.',
+      description:
+        'In the new era of technology we look in the future with certainty for life.',
     },
     {
-      img: styles.birthday,
+      img: 'birthday',
       title: 'Birthdays',
-      text: 'In the new era of technology we look in the future with certainty and pride for our life.',
+      description:
+        'In the new era of technology we look in the future with certainty for life.',
     },
     {
-      img: styles.wedding,
+      img: 'wedding',
       title: 'Weddings',
-      text: 'In the new era of technology we look in the future with certainty and pride for our life.',
+      description:
+        'In the new era of technology we look in the future with certainty for life.',
     },
     {
-      img: styles.event,
+      img: 'event',
       title: 'Events',
-      text: 'In the new era of technology we look in the future with certainty and pride for our life.',
+      description:
+        'In the new era of technology we look in the future with certainty for life.',
     },
   ];
   return (
     <section className={styles.services}>
       <div className={styles.wrapper}>
-        <h2 className={styles.header}>
-          We also offer unique services for your events
-        </h2>
+        <AnimatedAppear>
+          <h2 className={styles.header}>
+            We also offer unique services for your events
+          </h2>
+        </AnimatedAppear>
         <div className={styles.cardWrapper}>
-          {eventCards.map((card, i) => (
+          {eventCards.map(({ img, title, description }, i) => (
             <Card
               key={i}
               className={styles.card}
-              imgSizes={styles.img}
-              img={card.img}
-              title={card.title}
-              text={card.text}
+              img={`${styles[img]} ${styles.img}`}
+              title={title}
+              description={description}
             />
           ))}
         </div>
