@@ -3,21 +3,48 @@
 
 .card {
   @include flex(center, center, column, 1rem);
+  @include border;
+  @include transition;
+  align-content: center;
   border-radius: 12px;
-  border: 1.5px solid $accent-color;
   padding: 34px;
   text-align: center;
+  max-width: 306px;
+
+  &:has(.price) {
+    border-top: none;
+  }
+  .price {
+    @include font(24px, 700, 30px);
+    color: $secondary-color;
+    + h3 {
+      font-size: 20px;
+      line-height: 26px;
+    }
+  }
+
   h3 {
     @include font(24px, 700, 30px);
     font-family: 'DMSans';
     color: $text-color;
   }
+
   p {
     @include font(16px, 400);
     color: $text-xs-color;
   }
   a {
+    transition: inherit;
     @include font(16px, 700);
     color: $secondary-color;
+  }
+}
+
+.card.hover:hover {
+  box-shadow: 0 0 20px 1px rgba($color: $primary-color, $alpha: 1);
+  transform: scale(1.05);
+  border-color: rgba($color: $primary-color, $alpha: 0);
+  a {
+    transform: scale(1.05);
   }
 }
