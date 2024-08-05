@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styles from './Promo.module.scss';
 import { FC } from 'react';
-import AnimatedAppear from '@animation/Appereance';
+import AnimatedAppear from '@animation/Appearance';
 import { Button } from '@components/Button/Button';
 
 export const SectionPromo: FC = () => {

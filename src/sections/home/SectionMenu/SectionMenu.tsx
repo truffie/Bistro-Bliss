@@ -3,7 +3,7 @@ import styles from './SectionMenu.module.scss';
 import { FC } from 'react';
 
 import { Card, MenuCardProps } from '@components/Card/Card';
-import AnimatedAppear from '@animation/Appereance';
+import AnimatedAppear from '@animation/Appearance';
 
 export const SectionMenu: FC = () => {
   const menuCards: MenuCardProps[] = [

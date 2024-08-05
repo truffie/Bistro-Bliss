@@ -3,7 +3,7 @@ import styles from './SectionService.module.scss';
 import { FC } from 'react';
 
 import { BaseCardProps, Card } from '@components/Card/Card';
-import AnimatedAppear from '@animation/Appereance';
+import AnimatedAppear from '@animation/Appearance';
 
 export const SectionService: FC = () => {
   const eventCards: BaseCardProps[] = [
