@@ -10,9 +10,15 @@ export interface ButtonProps {
 const baseButton = `${styles.button}`;
 const coloredButton = `${styles.button} ${styles.buttonSecondary}`;
 
-export const Button: FC<ButtonProps> = ({ className, children, colored = false }) => {
+export const Button: FC<ButtonProps> = ({
+  className,
+  children,
+  colored = false,
+}) => {
   return (
-    <button className={`${colored ? coloredButton : baseButton} ${className}`}>{children}</button>
+    <button className={`${colored ? coloredButton : baseButton} ${className}`}>
+      {children}
+    </button>
   );
 };
 
