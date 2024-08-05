@@ -1,0 +1,88 @@
+@import '../../../assets/styles/layout';
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/ui';
+@import '../../../assets/styles/variables';
+
+.wrapper {
+  @include flex(flex-start, center, row, 80px);
+  @extend .layout-container;
+  padding: 85px 0 120px;
+}
+.main {
+  position: relative;
+  background-color: $background-color;
+  .imgWrapper {
+    @include transition;
+    position: relative;
+    &:hover {
+      & .img {
+        filter: brightness(0.8);
+      }
+      & .imgDescription {
+        opacity: 1;
+      }
+    }
+  }
+  .img {
+    @include img(600px, 566px, cover);
+    background-image: url('../assets/friedEggs.png');
+    transition: inherit;
+    border-radius: 12px;
+  }
+  .imgDescription {
+    @include font(24px, 600, 36px);
+    @include flex(space-between, center, row, 20px);
+    transition: inherit;
+    position: absolute;
+    height: 33%;
+    opacity: 0;
+    bottom: 0;
+    color: $background-color;
+    transition-delay: 0.2s;
+    background: linear-gradient(
+      to top,
+      rgba($background-color, 0.7) 0%,
+      rgba($background-color, 0) 100%
+    );
+    box-shadow: 0 -1px 1px 0px $background-color inset;
+    p {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  .content {
+    @include flex(space-between, flex-start, column, 24px);
+
+    h1 {
+      align-self: start;
+      @include font(55px, 500, 60px);
+    }
+    p {
+      @include font(18px, 500, 28px);
+      color: $text-color;
+    }
+    .price {
+      @include font;
+      color: $text-accent-color;
+    }
+  }
+
+  .arrow {
+    @include img(200px, 200px, contain);
+    @include transition;
+    background-image: url('./assets/arrowRight.svg');
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    opacity: 0.2;
+    cursor: default;
+    transform: translateY(-50%);
+    color: $primary-color;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+.hawaiiPizza {
+}
