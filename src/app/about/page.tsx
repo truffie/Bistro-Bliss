@@ -28,3 +28,4 @@ const page: FC = () => {
 };
 
 export default page;
+

@@ -27,3 +27,4 @@ export const SectionPromo: FC = () => {
     </section>
   );
 };
+
