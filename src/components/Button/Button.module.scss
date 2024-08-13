@@ -3,9 +3,8 @@
 
 .button {
   @extend .ui-button;
+
   &Secondary {
     @extend .ui-button-secondary;
   }
 }
-
-
