@@ -1,9 +1,16 @@
+interface Inutriens {
+  proteins: number;
+  fats: number;
+  carbs: number;
+}
+
 export interface menuItem {
-  id: number;
+  id?: number;
   img: string;
   price: string;
   title: string;
   description: string;
+  nutriens?: Inutriens;
 }
 
 export const menuItems: menuItem[] = [
@@ -65,4 +72,18 @@ export const menuItems: menuItem[] = [
   },
 ];
 
+export const orderCart = 0;
 
+// interface IDishesSize {
+//   S: string;
+//   M: string;
+//   L: string;
+//   XL: string;
+// }
+
+// export const dishesSize: IDishesSize = {
+//   S: '1s',
+//   M: '2s',
+//   L: '3s',
+//   XL: '4s',
+// };
