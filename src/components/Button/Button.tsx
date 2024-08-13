@@ -3,20 +3,25 @@ import styles from './Button.module.scss';
 
 export interface ButtonProps {
   colored?: boolean;
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
+  onClick?: any;
 }
-
-const baseButton = `${styles.button}`;
-const coloredButton = `${styles.button} ${styles.buttonSecondary}`;
 
 export const Button: FC<ButtonProps> = ({
   className,
   children,
   colored = false,
+  onClick,
 }) => {
+  const classes = [styles.button, className];
+
+  if (colored) {
+    classes.push(styles.buttonSecondary);
+  }
+
   return (
-    <button className={`${colored ? coloredButton : baseButton} ${className}`}>
+    <button onClick={onClick} className={classes.join(' ')}>
       {children}
     </button>
   );
