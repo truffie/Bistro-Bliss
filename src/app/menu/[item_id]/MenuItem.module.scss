@@ -4,7 +4,7 @@
 @import '../../../assets/styles/variables';
 
 .wrapper {
-  @include flex(flex-start, center, row, 80px);
+  @include flex(flex-start, center, row, 80px, nowrap);
   @extend .layout-container;
   padding: 85px 0 120px;
 }
@@ -62,8 +62,12 @@
       color: $text-color;
     }
     .price {
-      @include font;
+      @include flex(space-between, center, row);
+      width: 100%;
       color: $text-accent-color;
+      & p {
+        @include font(24px, 700, 30px);
+      }
     }
   }
 
@@ -84,5 +88,52 @@
   }
 }
 
-.hawaiiPizza {
+.sizeItem {
+  @include transition;
+  &Wrapper {
+    display: flex;
+    gap: 8px;
+    background: inherit;
+  }
+
+  @include tabBorder;
+  border-radius: 100px;
+  @include flex(flex-start, center, row);
+  padding: 8px;
+  &:hover {
+    @extend .active;
+  }
+
+  & p {
+    font-weight: 700;
+    border-radius: inherit;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    &:first-child {
+      background-color: $primary-color;
+      color: $background-color;
+    }
+    &:last-child {
+      color: $primary-color;
+    }
+  }
+
+  &.active {
+    background-color: $primary-color;
+    color: $background-color;
+    & p {
+      &:first-child {
+        background-color: $background-color;
+        color: $primary-color;
+      }
+      &:last-child {
+        color: $background-color;
+      }
+    }
+  }
+}
+
+.button {
+  width: 100%;
 }
