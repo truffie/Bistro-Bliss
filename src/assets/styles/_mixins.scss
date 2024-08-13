@@ -11,8 +11,8 @@
   justify-content: $justify;
   align-items: $align;
   flex-direction: $direciton;
-  flex-wrap: $wrap;
   gap: $gap;
+  flex-wrap: $wrap;
 }
 
 @mixin font($size: 16px, $weight: 400, $height: 24px) {
@@ -32,7 +32,9 @@
 @mixin border {
   border: $border-width solid $accent-color;
 }
-
+@mixin tabBorder {
+  border: $border-width solid $primary-color;
+}
 @mixin transition {
   transition: scale 0.3s ease-in, box-shadow 0.3s ease-in, color 0.3s ease-in,
     background-color 0.3s ease-in, border-color 0.3s ease-in-out,
