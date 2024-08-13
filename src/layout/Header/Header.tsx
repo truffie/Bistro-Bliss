@@ -1,7 +1,7 @@
-import Image from 'next/image';
 import styles from './Header.module.scss';
 import Link from 'next/link';
 import { Button } from '@components/Button/Button';
+import { orderCart } from '@storage';
 
 export function Header() {
   return (
@@ -50,7 +50,15 @@ export function Header() {
               <Button className={styles.navItem}>Menu</Button>
             </Link>
           </nav>
-          <Button>Book a Table</Button>
+          <Link href="/basket">
+            <Button
+              className={
+                orderCart
+                  ? `${styles.basket} ${styles.order}`
+                  : `${styles.basket}`
+              }
+            ></Button>
+          </Link>
         </div>
       </div>
     </header>
