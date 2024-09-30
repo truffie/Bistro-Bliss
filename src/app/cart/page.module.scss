@@ -1,0 +1,53 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+@import '../../assets/styles/layout';
+
+.main {
+  background-color: $background-color;
+  min-height: 1300px;
+  .wrapper {
+    @include center;
+    @extend .layout-container;
+    padding: 60px 0 163px;
+    gap: 50px;
+  }
+
+  h1 {
+    color: $text-color;
+    @include font(100px, 400, 96px);
+  }
+}
+.card {
+  padding-top: 0;
+  border-radius: 12px;
+  min-width: 306px;
+  &Wrapper {
+    width: 100%;
+    @include flex(flex-start, flex-start, row, 24px);
+  }
+
+  .img {
+    transition: filter 0.3s ease-in-out;
+    border-radius: 12px 12px 0 0;
+    @include img(calc(100% + $border-width * 2), 230px, cover);
+    position: relative;
+    background-image: url('../menu/assets/friedEggs.png');
+  }
+}
+
+.cardHover {
+  position: relative;
+  transition: opacity 0.3s ease-in-out;
+  &:hover {
+    & .card {
+      box-shadow: 0 0 20px 1px rgba($color: $primary-color, $alpha: 1);
+      transform: scale(1.05);
+    }
+    & .img {
+      filter: blur(2px);
+    }
+    & > div:last-child {
+      opacity: 1;
+    }
+  }
+}
