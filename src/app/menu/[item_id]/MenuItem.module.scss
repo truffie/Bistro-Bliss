@@ -12,7 +12,8 @@
   position: relative;
   background-color: $background-color;
   .imgWrapper {
-    @include transition;
+    transition: box-shadow 0.3s ease-in, filter 0.5s ease-in,
+      opacity 0.3s ease-in-out;
     position: relative;
     &:hover {
       & .img {
@@ -73,7 +74,7 @@
 
   .arrow {
     @include img(200px, 200px, contain);
-    @include transition;
+    transition: opacity 0.3s ease-in-out;
     background-image: url('./assets/arrowRight.svg');
     position: absolute;
     right: 10px;
@@ -89,7 +90,7 @@
 }
 
 .sizeItem {
-  @include transition;
+  transition: background-color 0.3s ease-in, color 0.3s ease-in;
   &Wrapper {
     display: flex;
     gap: 8px;
@@ -105,6 +106,7 @@
   }
 
   & p {
+    transition: inherit;
     font-weight: 700;
     border-radius: inherit;
     text-align: center;
@@ -135,5 +137,12 @@
 }
 
 .button {
+  cursor: pointer;
   width: 100%;
+  transition: all 0.3s ease-in;
+  &:hover {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    color: $background-color;
+  }
 }
