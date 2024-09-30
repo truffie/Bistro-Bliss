@@ -18,7 +18,7 @@
       }
 
       .socialMedia {
-        @include flex(flex-start, center, row, 0.25rem);
+        @include flex(flex-start, center, row, 1.5rem);
       }
     }
   }
@@ -49,7 +49,7 @@
       }
 
       .nav {
-        @include flex(flex-start, center, row, 8px);
+        @include flex(flex-start, center, row, 1.5rem);
         color: $text-color;
         position: absolute;
         left: 50%;
@@ -58,28 +58,7 @@
           @extend .ui-nav;
         }
       }
-      .basket {
-        // reset button styles
-        border: none;
-        border-radius: 0;
-        padding: 0;
 
-        @include img(50px, 50px, contain);
-        background-image: url('./assets/orderBag.svg');
-        position: relative;
-
-        &.order::before {
-          position: absolute;
-          display: block;
-          content: '';
-          width: 16px;
-          height: 16px;
-          border-radius: 50%;
-          left: 0px;
-          bottom: -7px;
-          background-color: $secondary-color;
-        }
-      }
     }
   }
 }
