@@ -26,8 +26,3 @@ export const Button: FC<ButtonProps> = ({
     </button>
   );
 };
-
-{
-  /* <button className={styles.buttonSecondary}>Book A Table</button>
-          <button className={styles.button}>Explore Menu</button> */
-}
