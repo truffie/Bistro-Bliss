@@ -1,16 +1,16 @@
 @import '../../assets/styles/mixins';
 @import '../../assets/styles/variables';
+@import '../../assets/styles/ui';
 
 .card {
   @include flex(center, center, column, 1rem);
   @include border;
-  @include transition;
   align-content: center;
   border-radius: 12px;
-  padding: 34px;
+  padding: 0 0 34px;
   text-align: center;
   max-width: 306px;
-
+  position: relative;
   &:has(.price) {
     border-top: none;
   }
@@ -20,6 +20,22 @@
     + h3 {
       font-size: 20px;
       line-height: 26px;
+    }
+  }
+
+  &.hover {
+    transition: transform 0.3s ease-in, box-shadow 0.3s ease-in,
+      border-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    & a {
+      transition: inherit;
+    }
+    &:hover {
+      box-shadow: 0 0 20px 1px rgba($color: $primary-color, $alpha: 1);
+      transform: scale(1.05);
+      border-color: rgba($color: $primary-color, $alpha: 0);
+      a {
+        transform: scale(1.05);
+      }
     }
   }
 
@@ -34,17 +50,71 @@
     color: $text-xs-color;
   }
   a {
-    transition: inherit;
     @include font(16px, 700);
     color: $secondary-color;
   }
 }
 
-.card.hover:hover {
-  box-shadow: 0 0 20px 1px rgba($color: $primary-color, $alpha: 1);
-  transform: scale(1.05);
-  border-color: rgba($color: $primary-color, $alpha: 0);
-  a {
-    transform: scale(1.05);
+.cardHoverSettings {
+  width: 100%;
+  @include flex(space-between, center, row);
+  padding: 15px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  transition-delay: 0.5s;
+  & .burger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    & span {
+      display: block;
+      width: 35px;
+      height: 3px;
+      background-color: $secondary-color;
+    }
+
+    &:hover {
+      & span {
+        width: 35px;
+      }
+    }
+  }
+
+  & .remove {
+    cursor: pointer;
+    position: relative;
+    width: 35px;
+    height: 35px;
+    @include flex(center, center, row, 10px);
+    transition: all 0.3s ease-in-out;
+    &::before,
+    &::after {
+      content: '';
+      transition: all 0.5s ease-in-out;
+      transition-delay: 0.2s;
+      position: relative;
+      background-color: $accent-color;
+      height: 10px;
+      width: 3px;
+    }
+
+    &:hover {
+      gap: 0px;
+
+      &::before {
+        height: 35px;
+        left: 1.5px;
+        transform: rotate(45deg);
+      }
+      &::after {
+        height: 35px;
+        left: -1.5px;
+        transform: rotate(-45deg);
+      }
+    }
   }
 }
