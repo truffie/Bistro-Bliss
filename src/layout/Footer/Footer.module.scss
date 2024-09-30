@@ -1,1 +1,70 @@
-@import "../../styles/mixins";
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/layout';
+@import '../../assets/styles/ui';
+@import '../../assets/styles/variables';
+
+.footer {
+  h4 {
+    font-family: 'DMSans';
+    color: $text-secondary-color;
+  }
+
+  padding: 120px 0;
+  background-color: $primary-color;
+  p,
+  li {
+    font-weight: 300;
+    color: $accent-color;
+    text-decoration: none;
+    list-style: none;
+  }
+  .wrapper {
+    @extend .layout-container;
+    @include flex(flex-start, flex-start, column, 100px);
+    > p {
+      align-self: stretch;
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid $text-xs-color;
+    }
+  }
+  .content {
+    @include flex(space-between, flex-start, row, 135px);
+
+    .promo {
+      @include flex(flex-start, flex-start, column, 30px);
+
+      max-width: 293px;
+
+      .logo {
+        @include flex(flex-start, center, row, 12px);
+        @include font(32px, 400, 30px);
+        h4 {
+          font-family: 'Playfair';
+        }
+        color: $text-secondary-color;
+        font-style: italic;
+        & div {
+          @include img(55px, 55px);
+          background-image: url('../../assets/logo.svg');
+        }
+      }
+    }
+
+    .nav {
+      @include flex(flex-start, center, row, 120px);
+      .pages {
+      }
+      .utility {
+      }
+      .navItem {
+        @include flex(flex-start, flex-start, column, 40px);
+        ul {
+          @include flex(flex-start, flex-start, column, 20px);
+        }
+      }
+    }
+    .inst {
+    }
+  }
+}
