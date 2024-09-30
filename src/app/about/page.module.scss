@@ -1,0 +1,61 @@
+@import '../../assets/styles/layout';
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/ui';
+@import '../../assets/styles/variables';
+
+.wrapper {
+  display: flex;
+  @extend .layout-container;
+  padding: 97px 0 222px;
+  gap: 85px;
+}
+
+.main {
+  h2 {
+    @extend .ui-section-header;
+  }
+}
+
+.colored {
+  background-color: $background-color;
+  .content {
+    @include flex(center, center, column, 30px);
+
+    .text {
+      @include font(18px, 500, 28px);
+    }
+  }
+}
+
+.stats + img {
+  border-radius: 12px;
+}
+.stats {
+  max-width: 610px;
+  @include flex(flex-start, flex-start, column, 20px);
+  p {
+    max-width: 556px;
+    color: $text-xs-color;
+  }
+  &Blocks {
+    @include flex(space-between, center, row, 24px);
+  }
+}
+.BlocksInfo {
+  margin-top: 40px; // + 20px gap
+  padding: 30px 105px 40px;
+  border: $border-width solid $accent-color;
+  border-radius: 8px;
+  max-width: 293px;
+  max-height: 174px;
+  text-align: center;
+  h3 {
+    @include font(55px, 500, 60px);
+    color: $text-color;
+  }
+
+  p {
+    @include font(18px, 500, 28px);
+    color: $text-xs-color;
+  }
+}
