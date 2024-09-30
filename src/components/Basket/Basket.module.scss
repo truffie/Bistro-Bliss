@@ -1,0 +1,40 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+.cartWrapper {
+  @include flex(center, center, column);
+
+  .cart {
+    // reset button styles
+    border: none;
+    border-radius: 0;
+    padding: 0;
+
+    @include img(37px, 50px, cover);
+    background-image: url('./assets/orderBag.svg');
+    position: relative;
+
+    transition: transform 0.3s ease-in;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+    &.order::before {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      left: -2px;
+      bottom: -3px;
+      background-color: $secondary-color;
+    }
+
+    .price {
+      margin-top: 20%;
+      @include font(16px, 400);
+      color: $text-xs-color;
+    }
+  }
+}
