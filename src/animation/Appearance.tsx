@@ -21,7 +21,7 @@ const Appearance: FC<props> = ({
     triggerOnce: true,
     threshold: 0.1,
     delay: delay * 1000,
-    rootMargin: '0px 0px -15% 0px',
+    rootMargin: '0px 0px -10% 0px',
   } as IntersectionOptions);
 
   const baseInit = {
