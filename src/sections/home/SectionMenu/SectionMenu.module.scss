@@ -5,6 +5,10 @@
 
 .cardWrapper {
   @extend .layout-grid;
+
+  .card {
+    padding: 34px;
+  }
 }
 
 .header {

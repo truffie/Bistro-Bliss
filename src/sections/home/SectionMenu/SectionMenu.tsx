@@ -2,11 +2,11 @@ import styles from './SectionMenu.module.scss';
 
 import { FC } from 'react';
 
-import { Card, MenuCardProps } from '@components/Card/Card';
+import { Card, LinkCardProps } from '@components/Card/Card';
 import AnimatedAppear from '@animation/Appearance';
 
 export const SectionMenu: FC = () => {
-  const menuCards: MenuCardProps[] = [
+  const menuCards: LinkCardProps[] = [
     {
       img: 'breakfast',
       title: 'Breakfast',
@@ -46,6 +46,7 @@ export const SectionMenu: FC = () => {
         <div className={styles.cardWrapper}>
           {menuCards.map(({ title, img, description, textLink }, i) => (
             <Card
+              className={styles.card}
               key={i}
               img={`${styles[img]} ${styles.img}`}
               title={title}
